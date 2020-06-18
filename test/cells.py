@@ -14,3 +14,10 @@ class Cells:
         self.background, self.foreground = background, foreground
         self.rect = self.cell.get_rect()
 
+    def update(self):
+        self.rect.topleft = self.position
+
+    def draw(self):
+        self.cell.fill(self.foreground)
+        self.screen.blit(self.cell, (self.position.x*30, self.position.y*30))
+
